@@ -1,6 +1,7 @@
 package app.mechanic;
 import app.services.ServiceRecord;
 import app.vehicles.Car;
+import app.services.ServiceType;
 
 import java.time.LocalDate;
 
@@ -27,8 +28,8 @@ public class Mechanic {
         return job;
     }
 
-    public void performService(Car car, String serviceType) {
-        ServiceRecord record = new ServiceRecord(serviceType, LocalDate.now(), this.name);
+    public void performService(Car car, ServiceType serviceType) {
+        ServiceRecord record = new ServiceRecord(serviceType.getDescription(), LocalDate.now(), this.name);
         car.addService(record);
         System.out.println("Service performed: " + serviceType + " by " + this.name);
     }
