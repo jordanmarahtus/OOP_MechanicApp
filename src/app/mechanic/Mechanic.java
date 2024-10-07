@@ -10,6 +10,7 @@ public class Mechanic {
     private int id;
     private String job;
 
+    // Constructor
     public Mechanic(String name, int id, String expertise) {
         this.name = name;
         this.id = id;
