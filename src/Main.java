@@ -8,7 +8,6 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.println("Hello and welcome!");
-
         Car car1 = new Car("vauxhall", "corsa", 2013);
 
         Mechanic mechanic1 = new Mechanic("larry", 1, "Oil Change");
@@ -20,5 +19,8 @@ public class Main {
         car1.displayInfo();
         System.out.println("------------------------------");
         mechanic1.displayInfo();
+
+        MechanicManagementSystem system = new MechanicManagementSystem();
+        system.start();
     }
 }
