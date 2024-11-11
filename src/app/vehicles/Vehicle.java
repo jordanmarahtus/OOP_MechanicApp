@@ -14,6 +14,13 @@ public class Vehicle {
         this.year = year;
     }
 
+    // Constructor using this()
+    // If a vehicle constructor is called passing only 2 parameters, it will hit this
+    // Pass the make and model and the default year of 2024 to our constructor above
+    public Vehicle(String make, String model) {
+        this(make, model, 2024);
+    }
+
     // Public getters show encapsulation by returning private class variables which are only accessible from inside class
     public String getMake() {
         return make;

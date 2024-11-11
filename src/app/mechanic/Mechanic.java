@@ -35,6 +35,12 @@ public class Mechanic {
         System.out.println("Service performed: " + serviceType + " by " + this.name);
     }
 
+    public void performService(Car car, ServiceType serviceType, String additionalDetails) {
+        ServiceRecord record = new ServiceRecord(serviceType.getDescription(), LocalDate.now(), this.name);
+        car.addService(record);
+        System.out.println("Service performed: " + serviceType + " by " + this.name + ". Details: " + additionalDetails);
+    }
+
     public void displayInfo() {
         System.out.println("Mechanic ID: " + id + ", Name: " + name + ", Job: " + job);
     }
