@@ -30,15 +30,28 @@ public class MechanicManagementSystem {
         }
     }
     private void addMechanic() {
-        System.out.print("Enter name: ");
-        String name = scanner.nextLine();
-        System.out.print("Enter job: ");
-        String job = scanner.nextLine();
+        try {
+            System.out.print("Enter name: ");
+            String name = scanner.nextLine();
+            if (name == null || name.trim().isEmpty()) {
+                throw new IllegalArgumentException("Name cannot be empty.");
+            }
 
-        Mechanic mechanic = new Mechanic(name, mechanicId, job);
-        System.out.println("Mechanic added");
-        mechanic.displayInfo();
-        mechanicId++;
+            System.out.print("Enter job: ");
+            String job = scanner.nextLine();
+            if (job == null || job.trim().isEmpty()) {
+                throw new IllegalArgumentException("Job cannot be empty.");
+            }
+
+            Mechanic mechanic = new Mechanic(name, mechanicId, job);
+            System.out.println("Mechanic added successfully!");
+            mechanic.displayInfo();
+            mechanicId++;
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("An unexpected error occurred: " + e.getMessage());
+        }
     }
 
     private void addCar() {

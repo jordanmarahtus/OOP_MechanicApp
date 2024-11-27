@@ -12,6 +12,8 @@ public class Main {
 
         Car car1 = new Car("vauxhall", "corsa", 2013);
 
+        var car2 = new Car("Audi", "A3", 2013);
+
         Mechanic mechanic1 = new Mechanic("larry", 1, "Oil Change");
         System.out.println("------------------------------");
         mechanic1.performService(car1, ServiceType.OIL_CHANGE);
