@@ -1,26 +1,24 @@
 package app.vehicles;
 import app.services.ServiceRecord;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-// Shows inheritance - the motorbike class will inherit make, model, year from the vehicle class but also has its own unique list of service records
-public class Motorbike extends Vehicle {
+// Shows inheritance - the motorbike immutable class will inherit make, model, year from the vehicle class but also has its own unique list of service records
+public final class Motorbike extends Vehicle {
     private List<ServiceRecord> serviceHistory;
 
     // Super() is called here as it will refer to the parent class constructor Vehicle
     // The super() function is used to give access to methods and properties of a parent or sibling class.
     // The super() function returns an object that represents the parent class.
-    public Motorbike(String make, String model, int year) {
+    public Motorbike(String make, String model, int year, List<ServiceRecord> initialServices) {
         super(make, model, year);
-        this.serviceHistory = new ArrayList<>();
+        this.serviceHistory = initialServices == null ? List.of() : List.copyOf(initialServices);
     }
 
-    public void addService(ServiceRecord service) {
-        serviceHistory.add(service);
-    }
-
+    // Returns an unmodifiable view of the service history - defensive copying
     public List<ServiceRecord> getServiceHistory() {
-        return new ArrayList<>(serviceHistory);
+        return Collections.unmodifiableList(serviceHistory);
     }
 
     // The usage of override displays polymorphism
