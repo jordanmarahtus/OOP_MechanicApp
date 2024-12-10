@@ -1,6 +1,11 @@
 import app.mechanic.Mechanic;
 import app.vehicles.Car;
 import app.services.ServiceType;
+import app.vehicles.Motorbike;
+import app.vehicles.Vehicle;
+
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {

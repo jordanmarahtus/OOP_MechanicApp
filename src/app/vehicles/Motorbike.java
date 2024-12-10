@@ -16,6 +16,10 @@ public final class Motorbike extends Vehicle {
         this.serviceHistory = initialServices == null ? List.of() : List.copyOf(initialServices);
     }
 
+    public Motorbike(String make, String model, int year) {
+        super(make, model, year);
+    }
+
     // Returns an unmodifiable view of the service history - defensive copying
     public List<ServiceRecord> getServiceHistory() {
         return Collections.unmodifiableList(serviceHistory);
