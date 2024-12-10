@@ -1,6 +1,6 @@
 package app.vehicles;
 
-public class Vehicle {
+public sealed class Vehicle permits Car, Motorbike{
     private String make;
     private String model;
     private int year;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Shows inheritance - the cAR class will inherit make, model, year from the vehicle class but also has its own unique list of service records
-public class Car extends Vehicle {
+public final class Car extends Vehicle {
     private List<ServiceRecord> serviceHistory;
 
     // this.make etc. refers to the current instance of the class
