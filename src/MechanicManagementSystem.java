@@ -55,17 +55,28 @@ public class MechanicManagementSystem {
     }
 
     private void addCar() {
-
-        System.out.print("Enter year: ");
-        int year = scanner.nextInt();
-        System.out.print("Enter make: ");
-        String make = scanner.nextLine();
-        System.out.print("Enter model: ");
-        String model = scanner.nextLine();
-
-        Car car = new Car(make, model, year);
-        System.out.println("Car added" + make + " " + model);
-        carId++;
+        try {
+            System.out.print("Enter year: ");
+            int year = scanner.nextInt();
+            scanner.nextLine();
+            System.out.print("Enter make: ");
+            String make = scanner.nextLine();
+            if (make == null || make.trim().isEmpty()) {
+                throw new IllegalArgumentException("make cannot be empty.");
+            }
+            System.out.print("Enter model: ");
+            String model = scanner.nextLine();
+            if (model == null || model.trim().isEmpty()) {
+                throw new IllegalArgumentException("model cannot be empty.");
+            }
+            Car car = new Car(make, model, year);
+            System.out.println("Car added : " + make + " " + model);
+            carId++;
+        }catch (IllegalArgumentException e) {
+            System.err.println("Error: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("An unexpected error occurred: " + e.getMessage());
+        }
 
     }
 
