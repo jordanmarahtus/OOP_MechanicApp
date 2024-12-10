@@ -15,6 +15,7 @@ public class Main {
         var car2 = new Car("Audi", "A3", 2013);
 
         Mechanic mechanic1 = new Mechanic("larry", 1, "Oil Change");
+        mechanic1.updateVehicleYear(car2, 2012);
         System.out.println("------------------------------");
         mechanic1.performService(car1, ServiceType.OIL_CHANGE);
         System.out.println("------------------------------");

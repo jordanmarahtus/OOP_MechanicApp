@@ -41,6 +41,11 @@ public class Mechanic {
         System.out.println("Service performed: " + serviceType + " by " + this.name + ". Details: " + additionalDetails);
     }
 
+    public void updateVehicleYear(Car car, int newYear) {
+        car = new Car(car.getMake(), car.getModel(), newYear);
+        car.displayInfo();  // Display the updated year
+    }
+
     public void displayInfo() {
         System.out.println("Mechanic ID: " + id + ", Name: " + name + ", Job: " + job);
     }
