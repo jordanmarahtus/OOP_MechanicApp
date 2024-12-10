@@ -15,6 +15,12 @@ public final class Car extends Vehicle implements Servicable {
         this.serviceHistory = new ArrayList<>();
     }
 
+    public Car(String make, String model)
+    {
+        super(make, model);
+        this.serviceHistory = new ArrayList<>();
+    }
+
     public void addService(ServiceRecord service) {
         serviceHistory.add(service);
     }
